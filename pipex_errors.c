@@ -40,7 +40,7 @@ void	pipex_error(char *str, int e)
 {
 	if (e == 127)
 	{
-		ft_putstr_fd("pipex127: ", 2);
+		ft_putstr_fd("pipex: ", 2);
 		ft_putstr_fd(str, 2);
 		if (ft_strchr(str, '/'))
 			ft_putstr_fd(": No such file or directory\n", 2);

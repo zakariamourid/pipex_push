@@ -1,5 +1,7 @@
 {
-    "files.associations": {
-        "pipex.h": "c"
-    }
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "pipex.h": "c",
+    "pipex_bonus.h": "c"
+  }
 }

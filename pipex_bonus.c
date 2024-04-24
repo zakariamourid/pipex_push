@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 t_pipex	*get_pipex(void)
 {
@@ -19,18 +19,15 @@ t_pipex	*get_pipex(void)
 	return (&pipex);
 }
 
+
+
+
 int	main(int ac, char **av, char **env)
 {
 	t_pipex	*pipex;
 	int		status;
-	pid_t	p1;
-	pid_t	p2;
+	int		i;
 
-	if (ac != 5)
-	{
-		ft_putstr_fd(ERROR_MSG, 2);
-		return (1);
-	}
 	pipex = get_pipex();
 	pipex->ac = ac;
 	pipex->cmd_nbr = ac - 2;
@@ -38,12 +35,9 @@ int	main(int ac, char **av, char **env)
 	pipex->env = env;
 	pipex->pids = (int *)malloc(sizeof(pid_t) * (pipex->cmd_nbr));
 	pipe(pipex->pipe_fd);
-	p1 = execute_first_cmd(pipex);
-	close(pipex->pipe_fd[WRITE]);
-	p2 = execute_last_cmd(pipex);
-	close(pipex->pipe_fd[READ]);
-	waitpid(p1, &status, 0);
-	waitpid(p2, &status, 0);
-	clean_exit(status >> 8);
-	return (1);
+	execute_cmds(pipex);
+	i = 0;
+	while(i < pipex->cmd_nbr)
+		waitpid(pipex->pids[i++],&status,0);
+	return (status >> 8);
 }
