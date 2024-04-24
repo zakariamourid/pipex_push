@@ -83,6 +83,8 @@ int	main(int ac, char **av, char **env)
 	pipe(pipex->pipe_fd);
 	p1 = execute_first_cmd(pipex);
 	p2 = execute_last_cmd(pipex);
+	close(pipex->pipe_fd[READ]);
+	close(pipex->pipe_fd[WRITE]);
 	waitpid(p1, &status, 0);
 	waitpid(p2, &status, 0);
 	return (status >> 8);
