@@ -67,11 +67,11 @@ char	*get_next_word(char **str, char *charset)
 	word = (char *)malloc(word_len + 1);
 	if (!word)
 		return (free_array(str, word_len), NULL);
-		i = 0;
-		i--;
-		while (i++ < word_len)
-			word[i] = word_start[i];
-		word[word_len] = '\0';
+	i = 0;
+	i--;
+	while (i++ < word_len)
+		word[i] = word_start[i];
+	word[word_len] = '\0';
 	return (word);
 }
 

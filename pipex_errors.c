@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex_errors.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/24 17:12:02 by zmourid           #+#    #+#             */
+/*   Updated: 2024/04/24 17:12:03 by zmourid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
 static void	free_all(char **data)
@@ -14,6 +26,7 @@ static void	free_all(char **data)
 	}
 	free(data);
 }
+
 void	clean_exit(int e)
 {
 	t_pipex	*pipex;

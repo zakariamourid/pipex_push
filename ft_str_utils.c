@@ -23,6 +23,7 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
@@ -38,6 +39,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(str, s2, size + 1);
 	return (str);
 }
+
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t			i;
@@ -53,6 +55,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	}
 	return (str1[i] - str2[i]);
 }
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;
@@ -70,6 +73,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (str1[i] - str2[i]);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;

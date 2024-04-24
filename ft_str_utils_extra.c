@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_utils_extra.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/24 17:08:17 by zmourid           #+#    #+#             */
+/*   Updated: 2024/04/24 17:08:18 by zmourid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
@@ -39,6 +51,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[dst_len + i] = 0;
 	return (dst_len + src_len);
 }
+
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s || fd < 0)

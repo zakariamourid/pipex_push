@@ -1,8 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/24 17:11:33 by zmourid           #+#    #+#             */
+/*   Updated: 2024/04/24 17:11:39 by zmourid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
-#include <stdlib.h>
-#include <sys/fcntl.h>
-#include <sys/unistd.h>
-#include <unistd.h>
 
 void	free_data(char **data, char *cmd)
 {
@@ -19,6 +27,7 @@ void	free_data(char **data, char *cmd)
 	free(data);
 	free(cmd);
 }
+
 char	*ft_look_in_path(char *cmd, char *path)
 {
 	char	*cmd_path;

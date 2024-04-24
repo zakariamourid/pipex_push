@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_syscalls.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/24 17:08:37 by zmourid           #+#    #+#             */
+/*   Updated: 2024/04/24 17:08:38 by zmourid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
 ssize_t	ft_write(int fd, const void *buf, size_t count)
@@ -9,6 +21,7 @@ ssize_t	ft_write(int fd, const void *buf, size_t count)
 		pipex_error("write", 1);
 	return (len);
 }
+
 int	ft_dup2(int oldfd, int newfd)
 {
 	int	fd;
@@ -18,9 +31,10 @@ int	ft_dup2(int oldfd, int newfd)
 		pipex_error("dup2", 1);
 	return (fd);
 }
+
 pid_t	ft_fork(void)
 {
-	pid_t pid;
+	pid_t	pid;
 
 	pid = fork();
 	if (pid == -1)
