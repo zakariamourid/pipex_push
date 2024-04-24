@@ -19,9 +19,6 @@ t_pipex	*get_pipex(void)
 	return (&pipex);
 }
 
-
-
-
 int	main(int ac, char **av, char **env)
 {
 	t_pipex	*pipex;
@@ -37,7 +34,7 @@ int	main(int ac, char **av, char **env)
 	pipe(pipex->pipe_fd);
 	execute_cmds(pipex);
 	i = 0;
-	while(i < pipex->cmd_nbr)
-		waitpid(pipex->pids[i++],&status,0);
+	while (i < pipex->cmd_nbr)
+		waitpid(pipex->pids[i++], &status, 0);
 	return (status >> 8);
 }

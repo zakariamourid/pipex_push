@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PIPEX_BONUS_H
+# define PIPEX_BONUS_H
 # include <fcntl.h>
 # include <limits.h>
 # include <stddef.h>
@@ -71,4 +71,3 @@ char		*get_next_line(int fd);
 # define CHILD 0
 
 #endif
-
