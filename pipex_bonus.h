@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:12:35 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/25 13:11:36 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/25 17:13:34 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <unistd.h>
 # include <sys/wait.h>
+# include <unistd.h>
 
 typedef struct s_pipex
 {
@@ -47,6 +47,7 @@ typedef struct t_cmd
 ssize_t		ft_write(int fd, const void *buf, size_t count);
 int			ft_dup2(int oldfd, int newfd);
 pid_t		ft_fork(void);
+int			*ft_pipe(int *pipefd);
 void		execute_cmd(char *cmd, t_pipex *pipex);
 void		execute_cmds(t_pipex *pipex);
 void		pipex_error(char *str, int e);

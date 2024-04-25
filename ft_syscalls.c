@@ -6,7 +6,7 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:08:37 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/24 17:08:38 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/25 17:15:21 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,11 @@ pid_t	ft_fork(void)
 	if (pid == -1)
 		pipex_error("fork", 1);
 	return (pid);
+}
+
+int	*ft_pipe(int *pipefd)
+{
+	if (pipe(pipefd) == -1)
+		pipex_error("fork", 1);
+	return (pipefd);
 }

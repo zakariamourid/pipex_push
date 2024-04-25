@@ -6,7 +6,7 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:06:46 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/25 16:58:12 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/25 17:12:29 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int ac, char **av, char **env)
 	pipex->av = av;
 	pipex->env = env;
 	pipex->pids = (int *)malloc(sizeof(pid_t) * (pipex->cmd_nbr));
-	pipe(pipex->pipe_fd);
+	ft_pipe(pipex->pipe_fd);
 	execute_cmds(pipex);
 	i = 0;
 	while (i < pipex->cmd_nbr)

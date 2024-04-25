@@ -6,7 +6,7 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:12:35 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/24 17:12:36 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/25 17:07:14 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_pipex
 ssize_t		ft_write(int fd, const void *buf, size_t count);
 int			ft_dup2(int oldfd, int newfd);
 pid_t		ft_fork(void);
+int			*ft_pipe(int *pipefd);
 void		execute_cmd(char *cmd, t_pipex *pipex);
 int			execute_first_cmd(t_pipex *pipex);
 int			execute_last_cmd(t_pipex *pipex);

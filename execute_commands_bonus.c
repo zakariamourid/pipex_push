@@ -6,7 +6,7 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 18:14:19 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/24 18:14:21 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/25 17:13:13 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,12 @@ void	execute_cmds(t_pipex *pipex)
 	i = 1;
 	pipex->pids[0] = execute_first_cmd(pipex);
 	pipex->tmp = pipex->pipe_fd[READ];
+	close(pipex->pipe_fd[WRITE]);
 	if (!pipex->pids)
 		pipex_error("malloc", 1);
-	close(pipex->pipe_fd[WRITE]);
 	while (i < pipex->cmd_nbr - 1)
 	{
-		pipe(pipex->pipe_fd);
+		ft_pipe(pipex->pipe_fd);
 		pipex->pids[i] = ft_fork();
 		if (pipex->pids[i] == CHILD)
 			child_exec(i, pipex);
