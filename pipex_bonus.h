@@ -6,7 +6,7 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:12:35 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/25 12:57:32 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/25 13:11:36 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ char		**ft_split(char *str, char *charset);
 # define WRITE 1
 # define READ 0
 # define CHILD 0
-# define ERROR_MSG "pipex: Usage: ./pipex_bonus infile cmd1 cmd2[args..] ... cmdn outfile\n"
+# define ERROR_MSG "pipex: Usage: ./pipex_bonus infile cmd1 cmd2 cmdn outfile\n"
 
 #endif
