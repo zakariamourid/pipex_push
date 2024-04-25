@@ -6,7 +6,7 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:06:46 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/24 17:06:47 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/24 23:39:50 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ int	main(int ac, char **av, char **env)
 	int		status;
 	int		i;
 
+	if (ac < 5)
+	{
+		ft_putstr_fd(ERROR_MSG, 2);
+		return (1);
+	}
 	pipex = get_pipex();
 	pipex->ac = ac;
 	pipex->cmd_nbr = ac - 2;

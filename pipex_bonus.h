@@ -6,7 +6,7 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:12:35 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/24 17:12:36 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/24 23:42:31 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <sys/wait.h>
 
 typedef struct s_pipex
 {
