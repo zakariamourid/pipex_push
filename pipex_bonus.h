@@ -6,7 +6,7 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:12:35 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/24 23:42:31 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/25 12:57:32 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,10 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 void		ft_putstr_fd(char *s, int fd);
 char		**ft_split(char *str, char *charset);
 //gnl
-char		*ft_strdup(char *str);
-char		*ft_strjoin2(char *s1, char *s2);
-char		*get_next_line(int fd);
 # define BUFFER_SIZE 20
 # define WRITE 1
 # define READ 0
 # define CHILD 0
+# define ERROR_MSG "pipex: Usage: ./pipex_bonus infile cmd1 cmd2[args..] ... cmdn outfile\n"
 
 #endif
