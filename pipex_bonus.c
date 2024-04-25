@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   pipex_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:06:46 by zmourid           #+#    #+#             */
-/*   Updated: 2024/04/24 23:39:50 by zmourid          ###   ########.fr       */
+/*   Updated: 2024/04/25 16:58:12 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int ac, char **av, char **env)
 	}
 	pipex = get_pipex();
 	pipex->ac = ac;
-	pipex->cmd_nbr = ac - 2;
+	pipex->cmd_nbr = ac - 3;
 	pipex->av = av;
 	pipex->env = env;
 	pipex->pids = (int *)malloc(sizeof(pid_t) * (pipex->cmd_nbr));
