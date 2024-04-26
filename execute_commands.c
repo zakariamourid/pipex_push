@@ -53,7 +53,7 @@ int	execute_last_cmd(t_pipex *pipex)
 	pid = ft_fork();
 	if (pid != 0)
 		return (pid);
-	ofd = open(pipex->av[pipex->ac - 1], O_RDWR | O_TRUNC | O_CREAT, 0664);
+	ofd = open(pipex->av[pipex->ac - 1], O_RDWR | O_TRUNC | O_CREAT, 0644);
 	if (ofd == -1)
 		pipex_error(pipex->av[pipex->ac - 1], 1);
 	ft_dup2(ofd, STDOUT_FILENO);
