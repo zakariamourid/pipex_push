@@ -34,6 +34,7 @@ typedef struct s_pipex
 	char	*cmd_path;
 }			t_pipex;
 
+t_pipex		*get_pipex(void);
 ssize_t		ft_write(int fd, const void *buf, size_t count);
 int			ft_dup2(int oldfd, int newfd);
 pid_t		ft_fork(void);
@@ -43,7 +44,6 @@ int			execute_first_cmd(t_pipex *pipex);
 int			execute_last_cmd(t_pipex *pipex);
 void		pipex_error(char *str, int e);
 void		clean_exit(int e);
-t_pipex		*get_pipex(void);
 char		*get_cmd_path(char *cmd, t_pipex *pipex);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strjoin(char const *s1, char const *s2);

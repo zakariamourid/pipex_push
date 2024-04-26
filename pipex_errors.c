@@ -12,30 +12,6 @@
 
 #include "pipex.h"
 
-static void	free_all(char **data)
-{
-	int	i;
-
-	i = 0;
-	if (!data)
-		return ;
-	while (data[i])
-	{
-		free(data[i]);
-		i++;
-	}
-	free(data);
-}
-
-void	clean_exit(int e)
-{
-	t_pipex	*pipex;
-
-	pipex = get_pipex();
-	free_all(pipex->cmd_args);
-	exit(e);
-}
-
 void	pipex_error(char *str, int e)
 {
 	if (e == 127)

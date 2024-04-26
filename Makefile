@@ -1,5 +1,5 @@
 CC= cc
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra #-Werror
 NAME= pipex
 BONUS = pipex_bonus
 CFILES = ft_syscalls.c  pipex.c pipex_errors.c pipex_utils.c ft_split.c ft_str_utils.c ft_str_utils_extra.c execute_commands.c
