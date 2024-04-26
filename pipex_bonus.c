@@ -36,7 +36,6 @@ int	main(int ac, char **av, char **env)
 	pipex->av = av;
 	pipex->env = env;
 	pipex->pids = (int *)malloc(sizeof(pid_t) * (pipex->cmd_nbr));
-	ft_pipe(pipex->pipe_fd);
 	execute_cmds(pipex);
 	i = 0;
 	while (i < pipex->cmd_nbr)

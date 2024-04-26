@@ -35,11 +35,11 @@ int	execute_first_cmd(t_pipex *pipex)
 	ifd = open(pipex->av[1], O_RDONLY);
 	if (ifd == -1)
 		pipex_error(pipex->av[1], 1);
-	close(pipex->pipe_fd[READ]);
 	ft_dup2(ifd, STDIN_FILENO);
 	ft_dup2(pipex->pipe_fd[WRITE], STDOUT_FILENO);
 	close(ifd);
 	close(pipex->pipe_fd[WRITE]);
+	close(pipex->pipe_fd[READ]);
 	execute_cmd(pipex->av[2], pipex);
 	return (-1);
 }
@@ -57,8 +57,8 @@ int	execute_last_cmd(t_pipex *pipex)
 		pipex_error(pipex->av[pipex->ac - 1], 1);
 	ft_dup2(ofd, STDOUT_FILENO);
 	close(ofd);
-	ft_dup2(pipex->tmp, STDIN_FILENO);
-	close(pipex->tmp);
+	ft_dup2(pipex->pipe_fd[READ], STDIN_FILENO);
+	close(pipex->pipe_fd[READ]);
 	execute_cmd(pipex->av[pipex->ac - 2], pipex);
 	return (-1);
 }
@@ -69,7 +69,7 @@ int	child_exec(int i, t_pipex *pipex)
 	close(pipex->tmp);
 	ft_dup2(pipex->pipe_fd[WRITE], STDOUT_FILENO);
 	close(pipex->pipe_fd[WRITE]);
-	close(pipex->pipe_fd[READ]);
+	close(pipex->tmp);
 	execute_cmd(pipex->av[i + 2], pipex);
 	return (1);
 }
@@ -79,9 +79,10 @@ void	execute_cmds(t_pipex *pipex)
 	int	i;
 
 	i = 1;
+	ft_pipe(pipex->pipe_fd);
 	pipex->pids[0] = execute_first_cmd(pipex);
-	pipex->tmp = pipex->pipe_fd[READ];
 	close(pipex->pipe_fd[WRITE]);
+	pipex->tmp = pipex->pipe_fd[READ];
 	if (!pipex->pids)
 		pipex_error("malloc", 1);
 	while (i < pipex->cmd_nbr - 1)
@@ -99,4 +100,5 @@ void	execute_cmds(t_pipex *pipex)
 		i++;
 	}
 	pipex->pids[pipex->cmd_nbr - 1] = execute_last_cmd(pipex);
+	close(pipex->tmp);
 }

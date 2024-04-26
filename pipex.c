@@ -33,10 +33,9 @@ int	main(int ac, char **av, char **env)
 	}
 	pipex = get_pipex();
 	pipex->ac = ac;
-	pipex->cmd_nbr = ac - 2;
+	pipex->cmd_nbr = ac - 3;
 	pipex->av = av;
 	pipex->env = env;
-	pipex->pids = (int *)malloc(sizeof(pid_t) * (pipex->cmd_nbr));
 	ft_pipe(pipex->pipe_fd);
 	p1 = execute_first_cmd(pipex);
 	close(pipex->pipe_fd[WRITE]);
